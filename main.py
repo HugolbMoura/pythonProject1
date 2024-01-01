@@ -183,10 +183,14 @@ class App: # Classe principal da aplicação
         self.saldo_label = tk.Label(self.nova_janela, text="Saldo Inicial")
         self.saldo_label.grid(row=3, column=0)
         
-        # Cria um botão de envio que verifica se todos os campos estão preenchidos
+        #Adicionar botáo para enviar os dados
         self.enviar_button = tk.Button(self.nova_janela, text="Enviar", command=self.verificar_campos)
-        self.enviar_button.grid(row=5, column=0, padx=10, pady=10)
+        self.enviar_button.grid(row=4, column=0, padx=10, pady=10)
         
+        #Adicionar botáo para cancelar
+        self.cancelar_button = tk.Button(self.nova_janela, text="Cancelar", command=self.nova_janela.destroy)
+        self.cancelar_button.grid(row=4, column=1, padx=10, pady=10)
+                
         def verificar_campos(self):
             # Verifica se todos os campos estão preenchidos
             if self.nome_entry.get() == "":
