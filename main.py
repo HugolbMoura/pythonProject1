@@ -1,5 +1,6 @@
 import tkinter as tk # Importação do módulo tkinter para criação da interface gráfica (GUI)
-from tkinter import simpledialog # Importação do módulo simpledialog para criação de diálogos de entrada de dados
+from tkinter import simpledialog, \
+    messagebox  # Importação do módulo simpledialog para criação de diálogos de entrada de dados
 
 
 # Definição da classe base Pessoa
