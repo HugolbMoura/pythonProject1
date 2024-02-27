@@ -1,6 +1,5 @@
 import tkinter as tk # Importação do módulo tkinter para criação da interface gráfica (GUI)
-from tkinter import simpledialog, \
-    messagebox  # Importação do módulo simpledialog para criação de diálogos de entrada de dados
+from tkinter import messagebox  # Importação do módulo simpledialog para criação de diálogos de entrada de dados
 
 
 # Definição da classe base Pessoa
@@ -26,6 +25,7 @@ class Fornecedor(Pessoa):
     def __init__(self, nome, idade, endereco, dados_fornecidos):
         super().__init__(nome, idade, endereco)
         self.dados_fornecidos = dados_fornecidos # Atributo dados_fornecidos da classe Fornecedor
+
 
 # Definição da classe CarteiraCorretora
 class CarteiraCorretora:
@@ -110,7 +110,7 @@ class App: # Classe principal da aplicação
         
         # Criação de um objeto da classe TamanhoPadrao
         self.tamanho_padrao = TamanhoPadrao()
-        self.tamanho_padrao.set_tamanho_padrao(700, 500, 500, 500)
+        self.tamanho_padrao.set_tamanho_padrao(400, 400, 400, 100)
         
         # Configuração da geometria da janela principal
         self.master.geometry(self.tamanho_padrao.get_tamanho_padrao())
@@ -155,7 +155,7 @@ class App: # Classe principal da aplicação
         self.cliente_listbox_update()
 
         self.adicionar_cliente_button = tk.Button(self.master, text="Adicionar Cliente", command=self.adicionar_cliente)
-        self.adicionar_cliente_button.grid(row=2, column=0, padx=10, pady=10)
+        self.adicionar_cliente_button.grid(row=2, column=0, padx=50, pady=10)
 
         # Configuração da interface para fornecedores
         self.fornecedor_label = tk.Label(self.master, text="Fornecedores")
@@ -188,7 +188,7 @@ class App: # Classe principal da aplicação
         largura_janela = self.master.winfo_width()
         altura_janela = self.master.winfo_height()
         
-        # Define a altura e a largura da nova janela para 50% da altura e largura da janela principal
+        # Define a altura e a largura da nova janela para 70% da altura e largura da janela principal
         largura_nova_janela = int(largura_janela * 0.7)
         altura_nova_janela = int(altura_janela * 0.7)
         
@@ -226,11 +226,11 @@ class App: # Classe principal da aplicação
         
         # Adicionar botão para enviar os dados
         self.enviar_button = tk.Button(self.nova_janela_cliente, text="Enviar", command=self.verificar_campos_cliente)
-        self.enviar_button.grid(row=5, column=1, padx=10, pady=10)
+        self.enviar_button.grid(row=5, column=0, padx=35, pady=10)
         
         # Adicionar botão para cancelar
         self.cancelar_button = tk.Button(self.nova_janela_cliente, text="Cancelar", command=self.nova_janela_cliente.destroy)
-        self.cancelar_button.grid(row=5, column=2, padx=10, pady=10)
+        self.cancelar_button.grid(row=5, column=1, padx=10, pady=10)
         
         # Adicione mais campos conforme necessário
         
@@ -300,11 +300,11 @@ class App: # Classe principal da aplicação
         
         #Adicionar botáo para enviar os dados
         self.enviar_button = tk.Button(self.nova_janela_fornecedor, text="Enviar", command=self.verificar_campos_fornecedor)
-        self.enviar_button.grid(row=5, column=1, padx=10, pady=10)
+        self.enviar_button.grid(row=5, column=0, padx=35, pady=10)
         
         #Adicionar botáo para cancelar
         self.cancelar_button = tk.Button(self.nova_janela_fornecedor, text="Cancelar", command=self.nova_janela_fornecedor.destroy)
-        self.cancelar_button.grid(row=5, column=2, padx=10, pady=10)
+        self.cancelar_button.grid(row=5, column=1, padx=10, pady=10)
 
         # Adicione mais campos conforme necessário
 
